@@ -1,1 +1,14 @@
-<h1>Hello, django!</h1>
+{% extends "base.html" %}
+{% load static %}
+
+{% block main %}
+{% if username == "Tom" %}
+<h1>It's me</h1>
+{% elif username%}
+<h1>Welcome {{ username }}!</h1>
+{% else %}
+<h1>Welcome Anonymous user</h1>
+{% endif %}
+
+<img src="{% static 'welcome.jpg' %}" />
+{% endblock %}
